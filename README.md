@@ -23,7 +23,7 @@ Also remember to add the INTERNET permission in your Manifest:
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 The wrapper currently supports the following endpoints of OpenWeatherMap API:
-* Lates Exchanges (https://api.exchangeratesapi.io/latest?base=USD)
+* Latest Exchanges (https://api.exchangeratesapi.io/latest?base=USD)
 * Historical Exchanges (https://api.exchangeratesapi.io/history?start_at=2018-09-01&end_at=2018-09-06&base=USD)
 
 ## EXRApiClient setup
@@ -35,7 +35,7 @@ You can configure it if user want to use default locale:
 ```java
 String locale = exrApiClient.setSupportedBaseFromLocale(Locale.getDefault());
 ```
-## Lates Exchanges
+## Latest Exchanges
 Returns the most current results based on the base currency sent:
 ```java
 EXRApiClient exrApiClient = new EXRApiClient();
