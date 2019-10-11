@@ -1,5 +1,5 @@
 # Exchange Rates Wrapper
-[![](https://jitpack.io/v/orhantgrl/exchange-rates-wrapper.svg)](https://jitpack.io/#orhantgrl/exchange-rates-wrapper)
+[![](https://jitpack.io/v/orhantgrl/exchange-rates-wrapper.svg)](https://jitpack.io/#orhantgrl/exchange-rates-wrapper) 
 
 Unofficial API wrapper of exchangeratesapi.io for Java made with Retrofit 2.0 also you can use on Android 
 
@@ -70,7 +70,6 @@ Returns results based on time interval and currency sent:
         });
 ```
 
-
 License
 --------
 
@@ -87,3 +86,5 @@ License
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+<a href="https://patreon.com/orhantgrl"><img src="https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Forhantgrl"> </a>
