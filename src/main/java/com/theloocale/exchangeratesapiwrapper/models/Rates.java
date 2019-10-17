@@ -3,6 +3,11 @@ package com.theloocale.exchangeratesapiwrapper.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
 /**
  * @author orhantgrl
  * created on 10/10/19.
@@ -144,6 +149,44 @@ public class Rates {
         this.kRW = kRW;
         this.mYR = mYR;
         this.eUR = eUR;
+    }
+
+    public Map<String, Float> getAllCurrencyValues() {
+        Map<String, Float> currencyMap = new TreeMap<String, Float>();
+        currencyMap.put("CAD", getcAD());
+        currencyMap.put("HKD", gethKD());
+        currencyMap.put("ISK", getiSK());
+        currencyMap.put("PHP", getpHP());
+        currencyMap.put("DKK", getdKK());
+        currencyMap.put("HUF", gethUF());
+        currencyMap.put("CZK", getcZK());
+        currencyMap.put("AUD", getaUD());
+        currencyMap.put("RON", getrON());
+        currencyMap.put("SEK", getsEK());
+        currencyMap.put("IDR", getiDR());
+        currencyMap.put("INR", getiNR());
+        currencyMap.put("BRL", getbRL());
+        currencyMap.put("RUB", getrUB());
+        currencyMap.put("HRK", gethRK());
+        currencyMap.put("JPY", getjPY());
+        currencyMap.put("THB", gettHB());
+        currencyMap.put("CHF", getcHF());
+        currencyMap.put("SGD", getsGD());
+        currencyMap.put("PLN", getpLN());
+        currencyMap.put("BGN", getbGN());
+        currencyMap.put("TRY", gettRY());
+        currencyMap.put("CNY", getcNY());
+        currencyMap.put("NOK", getnOK());
+        currencyMap.put("NZD", getnZD());
+        currencyMap.put("ZAR", getzAR());
+        currencyMap.put("USD", getuSD());
+        currencyMap.put("MXN", getmXN());
+        currencyMap.put("ILS", getiLS());
+        currencyMap.put("GBP", getgBP());
+        currencyMap.put("KRW", getkRW());
+        currencyMap.put("MYR", getmYR());
+        currencyMap.put("EUR", geteUR());
+        return currencyMap;
     }
 
     public Float getcAD() {
