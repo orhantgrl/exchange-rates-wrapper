@@ -15,7 +15,7 @@ allprojects {
 Add to your app module build.gradle
 ```gradle
 dependencies {
-        implementation implementation 'com.github.orhantgrl:exchange-rates-wrapper:v1.0'
+        implementation 'com.github.orhantgrl:exchange-rates-wrapper:v1.0'
 }
 ```
 Also remember to add the INTERNET permission in your Manifest:
