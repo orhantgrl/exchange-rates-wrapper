@@ -71,7 +71,6 @@ Returns results based on time interval and currency sent:
 ```
 
 ## License
---------
 
     Copyright 2019 Orhan Tugrul
 
