@@ -23,8 +23,8 @@ Also remember to add the INTERNET permission in your Manifest:
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
 The wrapper currently supports the following endpoints of Exchange Rates API:
-* Latest Exchanges (https://api.exchangeratesapi.io/latest?base=USD)
-* Historical Exchanges (https://api.exchangeratesapi.io/history?start_at=2018-09-01&end_at=2018-09-06&base=USD)
+- Latest Exchanges <https://api.exchangeratesapi.io/latest?base=USD>
+- Historical Exchanges <https://api.exchangeratesapi.io/history?start_at=2018-09-01&end_at=2018-09-06&base=USD>
 
 ## EXRApiClient setup
 You don't need a any API key or etc. just initialize client class like this:
@@ -70,7 +70,7 @@ Returns results based on time interval and currency sent:
         });
 ```
 
-License
+## License
 --------
 
     Copyright 2019 Orhan Tugrul
