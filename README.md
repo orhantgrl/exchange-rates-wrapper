@@ -1,3 +1,9 @@
+
+<h3 align="center">Exchange Rates Wrapper</h3>
+<p align="center">
+    Unofficial API wrapper of exchangeratesapi.io for Java made with Retrofit 2.0 also you can use on Android 
+</p>
+
 <div align="center">
 	
 [![](https://jitpack.io/v/orhantgrl/exchange-rates-wrapper.svg)](https://jitpack.io/#orhantgrl/exchange-rates-wrapper)
@@ -6,10 +12,7 @@
 
 </div>
 
-<h3 align="center">Exchange Rates Wrapper</h3>
-<p align="center">
-    Unofficial API wrapper of exchangeratesapi.io for Java made with Retrofit 2.0 also you can use on Android 
-</p>
+<br>
 
 Add to your project build.gradle
 ```gradle
