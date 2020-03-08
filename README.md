@@ -1,9 +1,15 @@
-# Exchange Rates Wrapper
+<div align="center">
+	
 [![](https://jitpack.io/v/orhantgrl/exchange-rates-wrapper.svg)](https://jitpack.io/#orhantgrl/exchange-rates-wrapper)
 [![Build Status](https://travis-ci.org/orhantgrl/exchange-rates-wrapper.svg?branch=master)](https://travis-ci.org/orhantgrl/exchange-rates-wrapper)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ab7b1c431cc34aa78ce287a61c040e57)](https://www.codacy.com/manual/orhantgrl/exchange-rates-wrapper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=orhantgrl/exchange-rates-wrapper&amp;utm_campaign=Badge_Grade)
 
-Unofficial API wrapper of exchangeratesapi.io for Java made with Retrofit 2.0 also you can use on Android 
+</div>
+
+<h3 align="center">Exchange Rates Wrapper</h3>
+<p align="center">
+    Unofficial API wrapper of exchangeratesapi.io for Java made with Retrofit 2.0 also you can use on Android 
+</p>
 
 Add to your project build.gradle
 ```gradle
