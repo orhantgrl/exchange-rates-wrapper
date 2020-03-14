@@ -4,13 +4,13 @@ import com.theloocale.exchangeratesapiwrapper.enums.EXRSupportedBases;
 import com.theloocale.exchangeratesapiwrapper.listeners.EXRApiRequestListener;
 import com.theloocale.exchangeratesapiwrapper.models.Exchange;
 import com.theloocale.exchangeratesapiwrapper.models.HistoricalExchange;
+import com.theloocale.exchangeratesapiwrapper.utils.EXRApiUtils;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import com.theloocale.exchangeratesapiwrapper.utils.EXRApiUtils;
 
 import java.util.Currency;
 import java.util.Locale;
@@ -68,11 +68,11 @@ public class EXRApiClient {
 
     /**
      * @param eXRApiRequestListener the ApiRequestListener of the request result.
+     * @param base the user selection exchange base
      * @param startAt api search history start time
      * @param endAt api search history end time
-     * @param base the user selection exchange base
      */
-    public void getHistoricalExchange(final String startAt, final String endAt, final String base, final EXRApiRequestListener<HistoricalExchange> eXRApiRequestListener) {
+    public void getHistoricalExchange(final String base, final String startAt, final String endAt, final EXRApiRequestListener<HistoricalExchange> eXRApiRequestListener) {
         Call<HistoricalExchange> historicalExchangeCall = eXRApiInterface.getHistoricalExchanges(startAt, endAt, base);
         historicalExchangeCall.enqueue(new Callback<HistoricalExchange>() {
             public void onResponse(Call<HistoricalExchange> call, Response<HistoricalExchange> response) {
