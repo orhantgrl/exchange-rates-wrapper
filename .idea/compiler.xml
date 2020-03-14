@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="exchangeratesapiwrapper" />
+        <module name="exchange-rates-wrapper" />
       </profile>
     </annotationProcessing>
   </component>
