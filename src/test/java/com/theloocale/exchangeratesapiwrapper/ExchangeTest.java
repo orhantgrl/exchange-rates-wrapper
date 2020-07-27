@@ -2,6 +2,7 @@ package com.theloocale.exchangeratesapiwrapper;
 
 import com.theloocale.exchangeratesapiwrapper.api.EXRApiClient;
 import com.theloocale.exchangeratesapiwrapper.api.EXRApiResponse;
+import com.theloocale.exchangeratesapiwrapper.enums.EXRSupportedBases;
 import com.theloocale.exchangeratesapiwrapper.listeners.EXRApiRequestListener;
 import com.theloocale.exchangeratesapiwrapper.models.Exchange;
 import com.theloocale.exchangeratesapiwrapper.models.HistoricalExchange;
@@ -11,6 +12,9 @@ import org.junit.Test;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Date;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
 
@@ -18,10 +22,10 @@ import static org.awaitility.Awaitility.await;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ExchangeUtilTest {
+public class ExchangeTest {
     private Exchange exchange;
     private HistoricalExchange historicalExchange;
-    private EXRApiClient apiClient = new EXRApiClient();
+    private final EXRApiClient apiClient = new EXRApiClient();
     private boolean isResponse = false;
 
     public Callable<Boolean> fetchExchange() {
@@ -64,8 +68,8 @@ public class ExchangeUtilTest {
 
     @Before
     public void setUp() {
-        await().atMost(5, TimeUnit.SECONDS).until(fetchExchange());
-        await().atMost(5, TimeUnit.SECONDS).until(fetchHistoricalExchange());
+        await().until(fetchExchange());
+        await().until(fetchHistoricalExchange());
     }
 
     private void catchException(Throwable t) {
@@ -80,31 +84,30 @@ public class ExchangeUtilTest {
 
     @Test
     public void testExchangeBase() {
-        final String base = "USD";
-        assertEquals(base, exchange.getBase());
+        assertEquals(EXRSupportedBases.USD.getBase(), exchange.getBase());
     }
 
     @Test
     public void testHistoricalExchangeBase() {
-        final String base = "EUR";
-        assertEquals(base, historicalExchange.getBase());
+        assertEquals(EXRSupportedBases.EUR.getBase(), historicalExchange.getBase());
     }
 
     @Test
     public void testExchangeDate() {
-        final String today = "2020-03-13";
-        assertEquals(today, exchange.getDate());
+        assertEquals(
+                new SimpleDateFormat("yyyy-MM-dd").format(new Date()),
+                exchange.getDate()
+        );
     }
 
     @Test
     public void testHistoricalExchangeDates() {
-        final String[] dates = { /*StartAt*/ "2018-10-09", /*EndAt*/ "2019-10-09"};
+        final String[] dates = { /*startAt*/ "2018-10-09", /*endAt*/ "2019-10-09"};
         assertArrayEquals(dates, new String[]{historicalExchange.getStartAt(), historicalExchange.getEndAt()});
     }
 
     @Test
     public void testExchangeRateSize() {
-        final int rateSize = 33;
-        assertEquals(rateSize, exchange.getRates().getAllCurrencyValues().size());
+        assertEquals(EXRSupportedBases.values().length, exchange.getRates().getAllCurrencyValues().size());
     }
 }
